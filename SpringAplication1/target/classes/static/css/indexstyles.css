@@ -1,0 +1,91 @@
+:root {
+  --color-dark: #391873;
+  --color-light: #95a0dd;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+    color: rgb(77, 27, 69 );
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    to top right,
+    var(--color-dark),
+    var(--color-light)
+  );
+  flex-direction: column;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--color-dark);
+  color: white;
+  padding: 20px 40px; /* Increased padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  z-index: 1000; /* Ensure navigation stays on top of other content */
+}
+
+.navigation .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navigation .navbar-brand {
+  font-size: 24px;
+  text-decoration: none;
+  color: white;
+}
+
+.navigation .navbar-brand:hover {
+  color: lightgray;
+}
+
+.navigation .navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.navigation .nav-item {
+  margin-left: 40px;
+}
+
+.navigation .nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.navigation .nav-link:hover {
+  color: lightgray;
+}
+
+.navigation .nav-item.active .nav-link {
+  font-weight: bold; /* Style active link differently */
+}
+
+ul {
+  list-style: none;
+}
+
+.col-md-10 {
+  text-align: center; /* Center text horizontally */
+  margin-top: 50px; /* Add space from the top */
+}

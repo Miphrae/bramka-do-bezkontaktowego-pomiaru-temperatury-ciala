@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome Page</title>
+
+    <link rel="stylesheet" href="../css/temp_record_adminstyles.css" />
+
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navigation">
+    <div class="container">
+        <div class = temp>
+            <a class="navbar-brand" href="/">Pomiar temperatury - baza danych </a>
+        </div>
+
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+
+            </ul>
+            <form method="post" th:action="@{/index}">
+                <button type="submit" onclick="successfullyLogout()" value="Sign Out">Sign out</button>
+            </form>
+        </div>
+    </div>
+</nav>
+
+<div align="center">
+
+    <h1>Tabela Pomiarów</h1>
+
+    <a href="/new-user">Wprowadź nowy pomiar</a>
+
+    </br></br>
+
+    <!-- Table -->
+    <table border="1" cellpadding="10"> <!-– border –
+        obramowanie, cellpadding – rozmiar komórki -->
+        <!-- Table header -->
+        <thead>
+        <tr> <!-- Table row -->
+            <!–- Table column -->
+            <th>Temperatura Ciała</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Data Pomiaru</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <!-- Table body -->
+        <tbody>
+        <tr th:each="pomiar : ${listPomiar}">
+            <td th:text="${pomiar.temperatura_ciala}">Temperatura Ciała</td>
+            <td th:text="${pomiar.imie}">Imię</td>
+            <td th:text="${pomiar.nazwisko}">Nazwisko</td>
+            <td th:text="${pomiar.data_pomiaru}">Data Pomiaru</td>
+            <td>
+                <a th:href="@{'/edit-user/' + ${pomiar.nr_pomiaru}}">Edytuj</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a th:href="@{'/delete-user/' + ${pomiar.nr_pomiaru}}">Usuń</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+</html>

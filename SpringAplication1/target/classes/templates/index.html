@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="../css/indexstyles.css" />
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="/">Pomiar temperatury - baza danych </a>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/index}">Home</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" th:href="@{/login}"
+                    >Login
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mt-5">
+            <label style="font-size: 30px">Witaj na stronie głównej!</label>
+            <div style="font-size: 20px">
+                Jeżeli chcesz się zalogować kliknij <a th:href="@{/main}"><b>tutaj</b></a> or
+                albo w prawym górnym rogu.
+            </div>
+        </div>
+    </div>
+</div>
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

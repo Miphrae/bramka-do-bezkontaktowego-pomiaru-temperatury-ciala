@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nowy Pomiar</title>
+    <link rel="stylesheet" href="../css/temp_record_adminstyles.css" />
+</head>
+<body>
+<div align="center">
+    <!--Page header-->
+    <h1>Wprowadź nowy pomiar</h1>
+    </br>
+
+    <form action="#" th:action="@{/save}" th:object="${pomiar}" method="post">
+        <!--Table-->
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>Nr Pomiaru</td>
+                <td><input type="text" th:field="*{nr_pomiaru}"></td>
+            </tr>
+            <tr>
+                <td>Temperatura Ciała</td>
+                <td><input type="text" th:field="*{temperatura_ciala}"></td>
+            </tr>
+            <tr>
+                <td>Temperatura Otoczenia</td>
+                <td><input type="text" th:field="*{temperatura_otoczenia}"></td>
+            </tr>
+            <tr>
+                <td>Imię</td>
+                <td><input type="text" th:field="*{imie}"></td>
+            </tr>
+            <tr>
+                <td>Nazwisko</td>
+                <td><input type="text" th:field="*{nazwisko}"></td>
+            </tr>
+            <tr>
+                <td>Data Pomiaru</td>
+                <td><input type="text" th:field="*{data_pomiaru}"></td>
+            </tr>
+            <tr>
+                <td>Błąd Pomiaru</td>
+                <td><input type="text" th:field="*{blad_pomiaru}"></td>
+            </tr>
+            <tr>
+                <td>Dodane Ręcznie?</td>
+                <td><input type="text" th:field="*{czy_dodane_recznie}"></td>
+            </tr>
+            <tr class="button-holder">
+                <td colspan = "2"><button type = "submit">Zapisz</button></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+</body>
+</html>

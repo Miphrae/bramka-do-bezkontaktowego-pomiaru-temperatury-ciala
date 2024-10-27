@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/temp_record_adminstyles.css" />
+</head>
+<body>
+<div align="center">
+    <h1>Edytuj pomiar</h1>
+    </br>
+    <form action = "#" th:action = "@{/update-user}" th:objects = "${pomiar}" method = "post">
+        <table border = "1" cellpadding="10">
+            <tr>
+                <td class="displayoff">Nr Pomiaru:</td>
+                <td class="displayoff"><input type="text" th:field="*{pomiar.nr_pomiaru}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>Temperatura Ciała:</td>
+                <td><input type="text" th:field="*{pomiar.temperatura_ciala}"></td>
+            </tr>
+            <tr>
+                <td class="displayoff">Temperatura otoczenia:</td>
+                <td class="displayoff"><input type="text" th:field="*{pomiar.temperatura_otoczenia}"></td>
+            </tr>
+            <tr>
+                <td>Imię:</td>
+                <td><input type="text" th:field="*{pomiar.imie}"></td>
+            </tr>
+            <tr>
+                <td>Nazwisko:</td>
+                <td><input type="text" th:field="*{pomiar.nazwisko}"></td>
+            </tr>
+            <tr>
+                <td>Data Pomiaru:</td>
+                <td><input type="text" th:field="*{pomiar.data_pomiaru}"></td>
+            </tr>
+            <tr>
+                <td class="displayoff">Błąd Pomiaru:</td>
+                <td class="displayoff"><input type="text" th:field="*{pomiar.blad_pomiaru}"></td>
+            </tr>
+            <tr>
+                <td class="displayoff">Czy Dodane Ręcznie?:</td>
+                <td class="displayoff"><input type="text" th:field="*{pomiar.czy_dodane_recznie}"></td>
+            </tr>
+            <!--button savePomiary-->
+            <td colspan="2">
+                <div class="wiersz">
+                    <button class="btn btn-primary zapisz" type="submit">Zapisz</button>
+                </div>
+            </td>
+        </table>
+    </form>
+</div>
+</body>
+</html>
